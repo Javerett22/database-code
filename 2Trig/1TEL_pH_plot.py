@@ -4,6 +4,9 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+plt.rcParams["font.family"] = "sans-serif"
+plt.rcParams["font.sans-serif"] = ["Aptos", "Arial", "Helvetica", "Liberation Sans", "DejaVu Sans"]
+
 df = pd.read_csv("telsam_1T(1).csv")
 df = df.dropna(subset=["pH", "protein_canonical"])  # drop rows with missing pH or protein_canonical
 
@@ -19,11 +22,11 @@ widths = np.diff(bins)
 
 fig, ax = plt.subplots(figsize=(8, 5))
 bars = ax.bar(centers, counts, width=widths, edgecolor="black", color="C0")
-ax.bar_label(bars, labels=[str(c) if c > 0 else "" for c in counts], fontsize=20, label_type="edge", padding=3)
-ax.set_xlabel("pH", fontsize=24)
-ax.set_ylabel("Number of constructs with crystals", fontsize=24)
-ax.set_title(f"pH of crystallization for 1TEL constructs "
-             f"(n={df['protein_canonical'].nunique()} constructs, {len(df)} crystals)", fontsize=24)
+ax.bar_label(bars, labels=[str(c) if c > 0 else "" for c in counts], fontsize=40, label_type="edge", padding=3)
+# ax.set_xlabel("pH", fontsize=24)
+# ax.set_ylabel("Number of constructs with crystals", fontsize=24)
+# ax.set_title(f"pH of crystallization for 1TEL constructs "
+           #  f"(n={df['protein_canonical'].nunique()} constructs, {len(df)} crystals)", fontsize=24)
 ax.tick_params(axis="both", which="major", labelsize=20)
 fig.tight_layout()
 fig.savefig("telsam_1TEL_pH_hist.png", dpi=200)
