@@ -1,0 +1,149 @@
+|||2.089||15.43|0.078|1TEL-flex-UBA E10 of Opt of Index B2
+|||2.541||13.8|0.086|1TEL-flex-UBA E10
+|||2.446||11.25|0.117|1TEL-flex-UBA E10
+|||2.103||28.06|0.046|1TEL-flex-UBA E10
+|||2.177||30.21|0.051|1TEL-flex-UBA E12 of Opt of Index B2
+|||2.261||13.93|0.066|1TEL-flex-UBA E12
+||BisTris Mg-formate E4, 1 mg/mL|||11.03|0.085|1TFUb new xtal form
+||BisTris Mg-formate E4, 1 mg/mL|||17.8|0.079|1TFUb new xtal form
+||BisTris Mg-formate G3 2 mg/ml|||16.69|0.05|1TFUb prism
+||BisTris Mg-formate F10 15 mg/ml|||15.29|0.075|1TFUb prism
+||10 mg/mL BTMF G11|||18.5166666666667||1TFUb+4Ub cookie
+||10 mg/mL BTMF G11|||15.1733333333333||1TFUb+4Ub cookie
+||PEG_CUSTOM A2-20mg|2.387||23.72||1TEL_WT
+||PEG_CUSTOM B8-20mg|2.375||8.77||1TEL_WT
+||PEG_CUSTOM D7-20mg|2.883||9.64||1TEL_WT
+||SALT RX A5 6mg/ml|2.149||11.63||1TEL-SUMO-UBA
+||SALT RX A5 6mg/ml|1.943||18.53||1TEL-SUMO-UBA
+||SALT RX G8 6mg/ml|2.669||37.73||1TEL-SUMO-UBA
+||PEG-Ion F9 6mg/mL|2.677||20.0||1TEL-SUMO-UBA
+||INDEX C12 6mg/mL|2.181||25.49||1TEL-SUMO-UBA
+||INDEX F2 3.5mg/ml|2.519||10.31||1T-PA-UBA, hexagon ball
+||Index C4 20mg/ml|1.538||13.54||HIS-1 TEL-TV-vWA 10/06/23, large tear drop
+||Index C4 20mg/ml|1.463||18.34||HIS-1 TEL-TV-vWA 10/06/23, large tear drop
+||Salt RX Opt A9 20 mg/ml|1.187||27.86||HIS-1 TEL-TV-vWA 10/06/23, tear drop
+40.0|160.0|SaltRx D3 3mg/ml|2.355||28.52||1TEL-UBA (SUMO) : Di-Ubiquitin
+40.0|160.0|SaltRx D3 3mg/ml|2.107||43.23||1TEL-UBA (SUMO) : Di-Ubiquitin
+||INDEX F6 3.5mg/ml|1.419||26.23|| SUMO1T-GG-UBA
+||SALTRX G8 1mg/ml|1.591||23.81||SUMO 1T-GG-UBA
+||SALTRX A5 1mg/ml|1.891||28.85|| SUMO 1T-GG-UBA
+||SALTRX G10 1mg/ml|1.626||24.72|| SUMO 1T-GG-UBA
+||SALTRX G8 1mg/ml|1.614||38.66|| SUMO 1T-PA-UBA
+||SALTRX G1 9 mg/mL (OPT)|1.775||31.79||HIS-1TEL-Short- DARPin (9DAM) (J4collect, no SG)
+||C3,INDEX C4 Condition,|1.861||50.94||HIS-1TEL-vWA 2/7/2024 - PG
+||INDEX C4 Condition, C4 Well|2.091||25.51||HIS-1TEL-vWA 2/7/2024 - MDHB
+||C3,INDEX C4 Condition,|1.798||38.11||HIS-1TEL-vWA 2/7/2024 - PG
+||B5,INDEX C4 Condition,|2.131||29.45||HIS-1TEL-vWA 2/7/2024 - MTHB
+||C3,INDEX C4 Condition,|1.807||13.44||HIS-1TEL-vWA 2/7/2024 - PG (20, 7)
+||C3,INDEX C4 Condition,|1.649||26.32||HIS-1TEL-vWA 2/7/2024 - PG
+||C3,INDEX C4 Condition,|1.852||16.49||HIS-1TEL-vWA 2/7/2024 - PG
+||C3,INDEX C4 Condition,|1.819||21.99||HIS-1TEL-vWA 2/7/2024 - PG
+||C3,INDEX C4 Condition,|1.942||21.34||HIS-1TEL-vWA 2/7/2024 - PG
+||C3,INDEX C4 Condition,|2.25||20.96||HIS-1TEL-vWA 2/7/2024 - PG
+||C5,INDEX C4 Condition,|1.636||27.0||HIS-1TEL-vWA 2/7/2024 - PH
+||SaltRx D3 3mg/ml|1.616||20.56||1TEL-UBA (SUMO) :  Di-Ubiquitin
+||SaltRx D3 3mg/ml|1.719||24.84||1TEL-UBA (SUMO) :  Di-Ubiquitin
+||INDEX C12 6mg/mL|1.778||24.76||1TEL-SUMO-UBA
+||SALT RX G8 6mg/ml|2.351||26.72||1TEL-SUMO-UBA
+||SALT RX G8 6mg/ml|3.026||8.09||1TEL-SUMO-UBA
+||SALT RX G8 6mg/ml|1.907||19.23||1TEL-SUMO-UBA
+||SALT RX G8 6mg/ml|2.129||20.06||1TEL-SUMO-UBA
+||SALT RX G8 6mg/ml|2.354||23.98||1TEL-SUMO-UBA
+||SALT RX G8 6mg/ml|1.797||22.14||1TEL-SUMO-UBA
+||C3,INDEX C4 Condition,|1.938||36.84||HIS-1TEL-vWA 2/7/2024 - PG
+||C3,INDEX C4 Condition,|1.796||33.17||HIS-1TEL-vWA 2/7/2024 - PG
+||PEG Ion F10 20mg/mL|2.017||13.9||2Trig-10xHis-1TEL-SR-UBA
+||Optimization E8 15 mg/mL|2.207||20.68||2Trig-10xhis-1TEL-SR-UBA
+||Optimization E8 15 mg/mL|1.954||18.95||2Trig-10xhis-1TEL-SR-UBA
+||Optimization E8 15 mg/mL|2.294||22.42||2Trig-10xhis-1TEL-SR-UBA
+||Optimization E8 15 mg/mL|2.293||15.86||2Trig-10xhis-1TEL-SR-UBA
+||Optimization E8 15 mg/mL|2.298||16.13||2Trig-10xhis-1TEL-SR-UBA
+||Optimization E8 15 mg/mL|2.413||16.45||2Trig-10xhis-1TEL-SR-UBA
+||Optimization E8 15 mg/mL|1.964||25.32||2Trig-10xhis-1TEL-SR-UBA
+||PEG_CUSTOM D7-20mg|2.562||10.04||1TEL_WT
+||PEG_CUSTOM D6-20mg|2.299||10.49||1TEL_WT
+||PEG_CUSTOM D6-20mg|2.548||22.95||1TEL_WT
+||Salt RX G1 20mg/mL|3.675||10.58||2Trig-10xHis-1TEL-SR-UBA
+||Salt RX G1 20mg/mL|3.011||18.43||2Trig-10xHis-1TEL-SR-UBA
+||Salt RX G1 20mg/mL|2.798||20.33||2Trig-10xHis-1TEL-SR-UBA
+||PEG Ion F10 20mg/mL|1.866||31.01||2Trig-10xHis-1TEL-SR-UBA
+||PEG Ion F10 20mg/mL|2.497||16.62||2Trig-10xHis-1TEL-SR-UBA
+||Crystal Screen E11 13.2 mgmL|1.619||42.54||1-TEL-SR-DARPin
+||Crystal Screen E11 13.2 mgmL|1.557||29.43||1-TEL-SR-DARPin
+||Crystal Screen E11 13.2 mgmL|1.549||37.89||1-TEL-SR-DARPin
+||Crystal Screen E11 13.2 mgmL|1.609||8.24||1-TEL-SR-DARPin
+||Salt RX C3 15mg/mL|3.549||27.12||10xHis-1TEL-SR-DARPin
+||Crystal Screen A11 15mg/mL|1.758||25.07||10xHis-1TEL-SR-DARPin
+||Crystal Screen A11 15mg/mL|1.571||24.9||10xHis-1TEL-SR-DARPin
+||Crystal Screen A11 15mg/mL|4.047||44.13||10xHis-1TEL-SR-DARPin
+||Crystal Screen A11 15mg/mL|2.012||23.46||10xHis-1TEL-SR-DARPin
+||SaltRX Screen 5.9.25 E1 Top Left|2.341||12.36||2Trig-1T-SR-DARPin
+||SaltRX Screen 5.9.25 E1 Top Left|cd ||9.94||2Trig-1T-SR-DARPin
+||SaltRX Screen 5.9.25 E1 Top Left|1.608||17.74||2Trig-1T-SR-DARPin
+||SaltRX Screen 5.9.25 E1 Top Left|1.668||19.01||2Trig-1T-SR-DARPin
+||SaltRX Screen 5.9.25 E1 Top Left|1.881||27.45||2Trig-1T-SR-DARPin
+||PEGION Screen 5.9.25 D7 Top Left|1.786||14.48||2Trig-1T-SR-DARPin
+||PEGION Screen 5.9.25 D7 Top Left|1.9||19.23||2Trig-1T-SR-DARPin
+||PEGION Screen 5.9.25 D7 Top Left|1.932||12.6||2Trig-1T-SR-DARPin
+||PEGION Screen 5.9.25 D7 Top Left|1.759||13.48||2Trig-1T-SR-DARPin
+||Index 5.9.25 F6 15mgmL|2.074||18.49||2Trig-1TEL-SR-DARPin
+||Index 5.9.25 F6 15mgmL|1.808||23.82||2Trig-1TEL-SR-DARPin
+||Index 5.9.25 F9 1mgmL|1.741||28.13||2Trig-1TEL-SR-DARPin
+||Index 5.9.25 F9 15mgmL|1.547||24.46||2Trig-1TEL-SR-DARPin
+||Index 5.9.25 F9 15mgmL|1.552||21.68||2Trig-1TEL-SR-DARPin
+||Index 5.9.25 F9 15mgmL|1.72||13.84||2Trig-1TEL-SR-DARPin
+||Index 5.9.25 F9 15mgmL|1.6||23.21||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 H2 15mgmL|1.308||19.84||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 H2 15mgmL|1.956||10.19||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 H2 15mgmL|1.899||18.76||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 D3 15mgmL|1.96||7.61||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 D3 15mgmL|1.652||12.05||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 D3 15mgmL|1.937||15.68||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 D3 15mgmL|1.748||20.05||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 E11 15mgmL|1.549||22.89||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 E11 15mgmL|1.565||12.03||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 E11 15mgmL|1.56||23.24||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 E11 15mgmL|1.867||19.51||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 E11 15mgmL|2.095||16.2||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 G8 15mgmL|1.481||13.92||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 G8 15mgmL|1.449||14.63||2Trig-1TEL-SR-DARPin
+||PEGION 5.9.25 D5 15mgmL|1.437||18.31||2Trig-1TEL-SR-DARPin
+||Xtal 5.10.25 A3 15mgmL|1.224||20.71||10xHis-1TEL-SR-DARPin
+||Xtal 5.10.25 A3 15mgmL|1.616||18.8||10xHis-1TEL-SR-DARPin
+||Xtal 5.10.25 A3 15mgmL|1.213||17.24||10xHis-1TEL-SR-DARPin
+||Salt RX 5.10.25 F1 1mg|1.241||17.67||10xHis-1TEL-SR-DARPin
+||Salt RX 5.10.25 F1 15mg|1.412||20.55||10xHis-1TEL-SR-DARPin
+||Xtal D1 15mg|1.681||15.65||10xHis-1TEL-SR-DARPin
+||Xtal D1 15mg|1.72||22.21||10xHis-1TEL-SR-DARPin
+||Wizard 5.9.25 F9 15mgmL|1.507||19.7||2Trig-1TEL-SR-DARPin
+||Crystal Screen E6|||16.39||10xH-1TEL-TV-vWa 15 mg/ml
+||Crystal Screen E6|2.117||20.57||10xH-1TEL-TV-vWa 15 mg/ml
+||Xtal E6|1.839||20.35||10xH-1TEL-TV-vWa 15 mg/ml
+||Xtal E6|2.176||12.91||10xH-1TEL-TV-vWa 15 mg/ml
+||Xtal 5.10.25 A3|1.551||26.01||10xHis-1TEL-SR-DARPin 15 mg/ml
+||Xtal 5.10.25 A3|1.365||19.56||10xHis-1TEL-SR-DARPin 15 mg/ml
+||Xtal 5.10.25 A3|1.546||30.17||10xHis-1TEL-SR-DARPin 15 mg/ml
+||Xtal 5.10.25 A3|1.549||29.46||10xHis-1TEL-SR-DARPin 15 mg/ml
+||PEG_CUSTOM C4|1.932||9.16||1TEL_WT 20mg/mL
+||PEG_CUSTOM C5|1.934||10.22||1TEL_WT 20mg/mL
+||PEG CUSTOM B1|1.862||19.7||1TEL_WT 20mg/mL
+||Peg Custom C5|1.63||11.95||1TEL_WT 20mg/mL ELECTRO
+||Peg Custom C5|||8.78||1TEL_WT 20mg/mL ELECTRO
+||Peg Custom C6|2.162||8.36||1TEL_WT 20mg/mL ELECTRO
+||Peg Custom C6|2.546||5.87||1TEL_WT 20mg/mL ELECTRO
+||Peg Custom D9|1.646||10.34||1TEL_WT 20mg/mL ELECTRO
+||Peg Custom D12|2.119||4.04||1TEL_WT 20mg/mL ELECTRO
+||Peg Custom D12|2.136||6.91||1TEL_WT 20mg/mL ELECTRO
+||Peg Custom D12|2.07||6.75||1TEL_WT 20mg/mL ELECTRO
+||Peg Custom D12|2.09||14.22||1TEL_WT 20mg/mL ELECTRO
+||Wizard E8 8 mg/mL|1.684||29.65||1TEL-SR-DARPin 04.14.2026/05.05.2026
+||Salt RX D2 23.2mg/mL|1.567||24.12||1TEL-GG-UBA-SUMO
+||Salt RX D2 23.2mg/mL|1.739||18.23||1TEL-GG-UBA-SUMO
+||Salt Rx G1|1.741||17.18||99:1 2trig:1trig 1TEL-GG-UBA 5 mg/mL 3.26.26/4.2.26
+||Salt RX D7|2.005||14.6||99:1 2trig:1trig 1TEL-GG-UBA 5 mg/mL 3.26.26/4.16.26
+||Salt RX D7|1.89||7.85||99:1 2trig:1trig 1TEL-GG-UBA 5 mg/mL 3.26.26/4.16.26
+||Salt RX E10|1.966||11.98||99:1 2trig:1trig 1TEL-GG-UBA 5 mg/mL 3.26.26/4.16.26
+||SaltRx D3 23.2 mg|1.456||22.1||1TEL-GG-UBA-SUMO 04.14.2026/05.04.2026
+||SaltRx D3 23.2 mg|1.715||18.54||1TEL-GG-UBA-SUMO 04.14.2026/05.04.2026
+||SaltRx D3 23.2 mg|1.791||18.59||1TEL-GG-UBA-SUMO 04.14.2026/05.04.2026
+sqlite>

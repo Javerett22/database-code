@@ -3,18 +3,15 @@ import pandas as pd
 import sqlite3
 from sqlalchemy import create_engine
 import re
-
+SCREENS = {1: 'crystal screen', 2: 'index', 3: 'peg ion', 4: 'salt rx', 5: 'wizard screen'}
 def clean_condition_string(raw_string):
     if not raw_string:
         return ""
-    
     # Strip out 'Average Ref. Index' followed by its float value (e.g., "Average Ref. Index 1.37105")
     # This regex handles variations with or without the period after 'Ref'
     cleaned = re.sub(r'Average\s+Ref\.?\s+Index\s+[\d.]+', '', raw_string, flags=re.IGNORECASE)
-    
     # Clean up any leftover double spaces resulting from the removal
     cleaned = re.sub(r'\s+', ' ', cleaned).strip()
-    
     return cleaned
 def get_proper_well(pH_dict):
     updated_dict = {}
@@ -82,72 +79,111 @@ def get_matching_pH(raw_screen_string, pH_map):
     lookup_key = f"{screen_prefix} {well}"
     
     return pH_map.get(lookup_key, None)
-
 def build_pH_map():
-    pH_map = {} # crystal condition : pH value
-        #need to adjust crystal screen later because it is also sometimes referred to as 'xtal'
-    conditions_key = {
-        1: 'crystal screen',
-        2: 'index',
-        3: 'peg ion',
-        4: 'salt rx',
-        5: 'wizard screen'
-    }
-    # extracting the conditions that have a pH associated with them and then creating a map with the name as the key and just the pH as the value
-    conn_pH_reference = sqlite3.connect('/home/benne77/2Trig/CrystalDex.db')
-    conditions_df = pd.read_sql_query("SELECT condition, GROUP_CONCAT(crystal_screen_id, ', ') as crystal_ids " \
-    "FROM conditions" \
-    " GROUP BY condition"
-    , conn_pH_reference) 
-    
-    condition_with_pH_val = [f"{condition} {crystal_ids}" for condition, crystal_ids in zip(conditions_df['condition'], conditions_df['crystal_ids'])
-                                if 'pH' in condition]
-    condition_with_pH_val = [clean_condition_string(condition) for condition in condition_with_pH_val]
-    # grabbing the pH value from each entry for the map
-    n = 0
+    conn = sqlite3.connect('/home/benne77/2Trig/CrystalDex.db')
+    rows = conn.execute("SELECT crystal_screen_id, condition FROM conditions").fetchall()
+    conn.close()
 
-    for condition in condition_with_pH_val:
-        condition_split = condition.split()
-        for value in condition_split:
-            if value == 'pH' and condition_split[n-1] == 'Average':
-                pH_map[condition] = condition_split[n+1]
-            elif value == 'pH':
-                pH_map[condition] = condition_split[n+1]
-            n += 1
-        n = 0
-
-    updated_pH_map = {}
-
-    for key, val in pH_map.items():
-        # Find the matching condition
-        new_key = key  # Default to the old key if no match is found
-        match_trailing_num = re.search(r'\d+$', key)
-        if match_trailing_num:
-            idx = int(match_trailing_num.group()) - 1
-            for condition_reference, condition in conditions_key.items():
-                if len(conditions_key) >= idx:
-                    if condition_reference - 1 == idx:
-                        well = re.findall(r"[A-Z]\d{1,2}", key, re.IGNORECASE)
-                        new_key = str(f"{condition} {well[0]}")
-        updated_pH_map[new_key] = val
-    known_prefixes = ['index', 'peg ion', 'salt rx', 'wizard screen', 'crystal screen']
-    for key, val in pH_map.items():
-        if any(key.lower().startswith(prefix) for prefix in known_prefixes):
+    pH_map = {}
+    for screen_id, cond in rows:
+        cond = clean_condition_string(cond)
+        well = re.match(r'^(?:\d+\s+)?([A-H]\d{1,2})\b', cond)
+        ph = re.findall(r'\bpH\s+(\d+(?:\.\d+)?)', cond)
+        if not well or not ph:
             continue
-        key = key.split()
-        key = 'crystal screen ' + key[0]
-        updated_pH_map[key] = val
-        updated_pH_map['Xtal'] = val
-        # Store with the new key
-    updated_pH_map['Storage buffer'] = '9.3'
-        
-    # Moving to original variable
-    pH_map = updated_pH_map
-    pH_map = get_proper_well(pH_map)
-    print(pH_map)
-    conn_pH_reference.close()
+        pH_map[(SCREENS[screen_id], well.group(1))] = ph[-1]   # "Average pH" comes last
+
+    for (screen, well), val in list(pH_map.items()):           # xtal alias
+        if screen == 'crystal screen':
+            pH_map[('xtal', well)] = val
+    # print(pH_map)
     return pH_map
 
+ALIASES = [
+    (r'salt\s*-?\s*rx|slat\s*rx', 'salt rx'),
+    (r'peg\s*-?\s*ion',           'peg ion'),
+    (r'wizard',                   'wizard screen'),
+    (r'crystal\s*screen|xtal',    'crystal screen'),
+    (r'\bindex\b',                'index'),
+]
+# def build_pH_map():
+    # pH_map = {} # crystal condition : pH value
+    #     #need to adjust crystal screen later because it is also sometimes referred to as 'xtal'
+    # conditions_key = {
+    #     1: 'crystal screen',
+    #     2: 'index',
+    #     3: 'peg ion',
+    #     4: 'salt rx',
+    #     5: 'wizard screen'
+    # }
+    # # extracting the conditions that have a pH associated with them and then creating a map with the name as the key and just the pH as the value
+    # conn_pH_reference = sqlite3.connect('/home/benne77/2Trig/CrystalDex.db')
+    # conditions_df = pd.read_sql_query("SELECT condition, GROUP_CONCAT(crystal_screen_id, ', ') as crystal_ids " \
+    # "FROM conditions" \
+    # " GROUP BY condition"
+    # , conn_pH_reference) 
+    
+    # condition_with_pH_val = [f"{condition} {crystal_ids}" for condition, crystal_ids in zip(conditions_df['condition'], conditions_df['crystal_ids'])
+    #                             if 'pH' in condition]
+    # condition_with_pH_val = [clean_condition_string(condition) for condition in condition_with_pH_val]
+    # # grabbing the pH value from each entry for the map
+    # n = 0
+
+    # for condition in condition_with_pH_val:
+    #     condition_split = condition.split()
+    #     for value in condition_split:
+    #         if value == 'pH' and condition_split[n-1] == 'Average':
+    #             pH_map[condition] = condition_split[n+1]
+    #         elif value == 'pH':
+    #             pH_map[condition] = condition_split[n+1]
+    #         n += 1
+    #     n = 0
+
+    # updated_pH_map = {}
+
+    # for key, val in pH_map.items():
+    #     # Find the matching condition
+    #     new_key = key  # Default to the old key if no match is found
+    #     match_trailing_num = re.search(r'\d+$', key)
+    #     if match_trailing_num:
+    #         idx = int(match_trailing_num.group()) - 1
+    #         for condition_reference, condition in conditions_key.items():
+    #             if len(conditions_key) >= idx:
+    #                 if condition_reference - 1 == idx:
+    #                     well = re.findall(r"[A-Z]\d{1,2}", key, re.IGNORECASE)
+    #                     new_key = str(f"{condition} {well[0]}")
+    #     updated_pH_map[new_key] = val
+    # known_prefixes = ['index', 'peg ion', 'salt rx', 'wizard screen', 'crystal screen']
+    # for key, val in pH_map.items():
+    #     if any(key.lower().startswith(prefix) for prefix in known_prefixes):
+    #         continue
+    #     key = key.split()
+    #     key = 'crystal screen ' + key[0]
+    #     updated_pH_map[key] = val
+    #     updated_pH_map['Xtal'] = val
+    #     # Store with the new key
+    # updated_pH_map['Storage buffer'] = '9.3'
+        
+    # # Moving to original variable
+    # pH_map = updated_pH_map
+    # pH_map = get_proper_well(pH_map)
+    # print(pH_map)
+    # conn_pH_reference.close()
+    # return pH_map
+def lookup_pH(raw, pH_map):
+    s = str(raw)
+    low = s.lower().replace('_', ' ')
+    if low.strip() == 'storage buffer':
+        return '9.3'
+    well = re.search(r'\b([a-h]\d{1,2})\b', low)
+    if not well:
+        return None
+    well = well.group(1).upper()
+    for pat, name in ALIASES:
+        if re.search(pat, low):
+            return pH_map.get((name, well))          # exact (screen, well), no guessing
+    m = re.search(r'Average\s+pH\s+(\d+(?:\.\d+)?)', s)   # e.g. the 23.0 rows
+    return m.group(1) if m else None
 def connect_to_database():
     conn_database = sqlite3.connect('/home/benne77/data.db')
     cursor = conn_database.cursor()
@@ -206,56 +242,7 @@ def match_pH():
         cc_unknown_pH = ' '.join(history) ###### The rest of the stuff in the line.
         matched_before = df.iat[row, df.columns.get_loc('pH')]
 
-    # Matching unknowns with knowns.   
-        for key, val in pH_map.items():
-            key_split = key.split()
-            # if the well is the first thing in the list.
-            if key == 'Storage buffer' and cc_unknown_pH.lower() == 'storage buffer':
-                df.iat[row, df.columns.get_loc('pH')] = val
-                break
-
-            if len(key_split) == 2 and well_unknown_pH in key_split[1]:
-                num_found = 1
-                if key_split[0].lower() in cc_unknown_pH.lower():
-                    num_found = 2 
-                if num_found >= 2: 
-                    df.iat[row, df.columns.get_loc('pH')] = val
-                    break
-
-            if len(key_split) == 2 and well_unknown_pH in key_split[0]:
-                num_found = 1
-                if key_split[1].lower() in cc_unknown_pH.lower():
-                    num_found = 2 
-                if num_found >= 2: 
-                    df.iat[row, df.columns.get_loc('pH')] = val
-                    break
-
-            if len(key_split) == 3 and well_unknown_pH in key_split[2]:
-                num_found = 1
-                tray_type = f"{key_split[0]} {key_split[1]}"
-                if tray_type.lower() in cc_unknown_pH.lower():
-                    num_found = 2
-                if num_found >= 2: 
-                    df.iat[row, df.columns.get_loc('pH')] = val
-                    break
-                # Concatinate the first two parts and look for it in the unknown_cc
-        current_ph_val = df.iat[row, df.columns.get_loc('pH')]
-        if pd.isna(current_ph_val) or current_ph_val == matched_before:
-            cleaned = original_line.lower().strip().replace("_", " ")
-            well_match = re.search(r'\b([a-l]\d{1,2})\b', cleaned)
-            if well_match:
-                w = well_match.group(1).upper()
-                if "index" in cleaned: prefix = "index"
-                elif "peg ion" in cleaned or "peg-ion" in cleaned: prefix = "peg ion"
-                elif "salt rx" in cleaned or "salt-rx" in cleaned: prefix = "salt rx"
-                elif "wizard" in cleaned: prefix = "wizard screen"
-                elif "crystal screen" in cleaned or "xtal" in cleaned: prefix = "crystal screen"
-                # else: prefix = "crystal screen"
-                
-        row += 1
-
-    # Reworking that last section. Can look up the crystal condition via corresponding number.
-
+    df['pH'] = [lookup_pH(c, pH_map) if pd.notna(c) else None for c in df['crystalcond']]
     df.to_sql('data_table', engine, if_exists='replace', index=False) 
     engine.dispose()
 
@@ -264,8 +251,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-'''Need to work on the following:
-1. Crystal screen is numbered up to 96.'''
